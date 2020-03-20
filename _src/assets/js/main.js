@@ -25,12 +25,12 @@ function searchSerie(ev) {
         let listApiArray = data;
         paintSearchResult(listApiArray);
         console.log(listApiArray);
+        for (let i = 0; i < favoriteListArray.length; i++) {
+          if (favoriteListArray[i].id === listApiArray[i].show.id) {
+            listApiArray.classList.add('favorite');
+          }
+        }
       });
-    for (let i = 0; i < favoriteListArray.length; i++) {
-      if (favoriteListArray[i].id === listApiArray[i].show.id) {
-        listApiArray.classList.add('favorite');
-      }
-    }
   }
 }
 
@@ -102,15 +102,15 @@ function addFavoriteList(target) {
 }
 
 // Función para comprobar las películas favoritas
-function toggleFavoriteSerie() {
-  // Comprueba si ya está en favoritos
-  // Si esta en favoritos, se quita de la lista (y del array del local tambien)
-  removeFavorite();
-  // Si NO esta en favoritos, se añade (y al array del local tambien)
-  // addFavorite();
-  // Toggle a los estilos (sea el resultado que sea)
-  // Se manda al Local Storage el Array completo de favoritas
-}
+// function toggleFavoriteSerie() {
+// Comprueba si ya está en favoritos
+// Si esta en favoritos, se quita de la lista (y del array del local tambien)
+// removeFavorite();
+// Si NO esta en favoritos, se añade (y al array del local tambien)
+// addFavorite();
+// Toggle a los estilos (sea el resultado que sea)
+// Se manda al Local Storage el Array completo de favoritas
+// }
 
 // function removeFavoriteList() {
 // eliminarlo del array (splice)
