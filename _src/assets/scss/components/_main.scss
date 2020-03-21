@@ -1,25 +1,36 @@
 .main-container {
   display: flex;
   flex-direction: row;
-  background-color: lightcyan;
   justify-content: space-evenly;
 }
+.main-title-text {
+  color: #f9be04;
+  font-family: $font-main;
+  margin-top: 10px;
+  text-shadow: 0 0 30px rgba(245, 214, 76, 0.746);
+  font-size: 50px;
+}
 
-.favorites-list {
-  height: 80vh;
-  width: 220px;
-  margin-top: 25px;
+body {
+  height: 100vh;
+  background: linear-gradient(to top, #232526);
+}
+
+.form {
+  margin: 0 0px 0 25px;
   font-family: $font-mainText;
+}
+.favorites-list {
+  width: 220px;
+  margin: 0 25px 0 25px;
 }
 .results-container {
   display: flex;
   flex-direction: row;
-  height: 80vh;
   margin: 30px;
-  width: 1350px;
-  border: 3px solid coral;
-  background-color: lightgoldenrodyellow;
+  width: 1400px;
 }
+
 .results {
   display: flex;
   flex-direction: row;
@@ -30,31 +41,68 @@
   display: flex;
   flex-direction: row;
   margin-top: 15px;
-  background-color: cornflowerblue;
+  background: linear-gradient(to right, #f9be04, rgba(249, 192, 4, 0.664));
+  border-radius: 10px;
 }
+
 .list-favorite-element-title {
   padding: 5px;
+  font-family: $font-mainText;
+  font-weight: 900;
 }
+
 .list-favorite-element-image {
   width: 106px;
   height: 146px;
-  border: 3px solid red;
+  border: 2px solid #f9be04;
+  border-radius: 10px;
 }
 
 .results-image {
   width: 216px;
   height: 301px;
-  border: 3px solid coral;
 }
 
 .list-search-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px 20px 0 20px;
-  background: pink;
-  margin: 10px 10px 10px 10px;
+  background: #606468;
+  margin: 10px 10px 30px 10px;
+  border-radius: 10px;
+}
+
+.list-search-element-title {
+  margin: 10px 10px 30px 10px;
+  font-size: 25px;
+  width: 210px;
+  font-family: $font-mainText;
 }
 
 .favorite {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px 20px 0 20px;
-  background: red;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 30px 10px;
+  border-radius: 10px;
+  background: #f9be04;
+  font-family: $font-mainText;
+  font-weight: 900;
+}
+
+.input-title {
+  font-size: 20px;
+  margin: 0 20px 20px 0;
+}
+
+.btn {
+  font-size: 20px;
+  width: 100px;
+  border-radius: 50px;
+  background: #f9be04;
+  &:hover {
+    box-shadow: 0 0 30px rgba(245, 214, 76, 0.746);
+  }
 }
