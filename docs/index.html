@@ -7,6 +7,9 @@
         <title>Adalab Web Starter Kit</title>
         <link rel="icon" href="../icons/favicon.ico"
         />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
         rel="stylesheet" />
         <style>
@@ -25,18 +28,18 @@
             <main>
                 <div class="main-container">
                     <div>
-                        <form class="form js-search-form" action="">
-                            <input class="input-title js-search-title" type="text" name="title" id="title"
-                            placeholder="Nombre de la serie" />
-                            <button class="btn js-btn-search">Search</button>
+                        <form class="search-form js-search-form" action="">
+                            <input class="search-input-title  js-search-title" type="text" name="title"
+                            id="title" placeholder="Nombre de la serie" />
+                            <button class="search-btn js-btn-search">Search</button>
                         </form>
                         <div>
-                            <ul class=" favorites-list js-favorites-list ">Mis series favoritas</li>
-                            </ul>
+                             <h3 class="list-favorite-title">Mis series favoritas</h3> 
+                            <ul class=" list-favorite js-favorites-list "></ul>
                         </div>
                     </div>
-                    <div class="results-container js-search-results-container">
-                        <ul class="results js-search-results"></ul>
+                    <div class="results js-search-results-container">
+                        <ul class="results-list js-search-results"></ul>
                     </div>
                 </div>
             </main>
