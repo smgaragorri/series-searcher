@@ -105,6 +105,10 @@ function paintFavoriteList(getLocalSerie) {
     listDeleteAll.setAttribute('class', 'list-favorite-element-delete');
     listDeleteAll.appendChild(listDeleteAlText);
     listFavorite.appendChild(listDeleteAll);
+    const buttonDeleteAll = document.querySelector(
+      '.list-favorite-element-delete'
+    );
+    buttonDeleteAll.addEventListener('click', deleteAllFavorites);
   }
 }
 
@@ -174,6 +178,16 @@ function addFavoriteList(target) {
   getLocalSerie.push(saveObject);
   localStorage.setItem('serie', JSON.stringify(getLocalSerie));
   paintFavoriteList(getLocalSerie);
+}
+
+function deleteAllFavorites(ev) {
+  ev.preventDefault(ev);
+  for (let i = 0; i < getLocalSerie.length; i++) {
+    getLocalSerie.splice([i]);
+    paintFavoriteList(getLocalSerie);
+    searchSerie(ev);
+  }
+  localStorage.setItem('serie', JSON.stringify(getLocalSerie));
 }
 
 searchBtn.addEventListener('click', searchSerie);
