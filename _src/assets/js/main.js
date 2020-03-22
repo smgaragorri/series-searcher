@@ -69,18 +69,27 @@ function paintFavoriteList(getLocalSerie) {
   listFavorite.innerHTML = '';
   if (getLocalSerie !== null) {
     for (let i = 0; i < getLocalSerie.length; i++) {
+      // Crear todos los elementos de lista vacíos
       const listFavoriteElement = document.createElement('li');
       const listFavoriteImage = document.createElement('img');
       const listFavoriteTitle = document.createElement('p');
+      const listFavoriteCross = document.createElement('i');
+      // Darle a cada elemento sus atributos
       listFavoriteElement.setAttribute('class', 'list-favorite-element');
       listFavoriteElement.setAttribute('id', `${getLocalSerie[i].id}`);
       listFavoriteElement.setAttribute('value', `${getLocalSerie[i].name}`);
       listFavoriteTitle.setAttribute('class', 'list-favorite-element-title');
       listFavoriteImage.setAttribute('class', 'list-favorite-element-image');
+      listFavoriteCross.setAttribute('class', 'fas fa-times-circle');
+      listFavoriteCross.setAttribute('id', `${getLocalSerie[i].id}`);
+      // Meter unos elementos dentro de otros
       listFavoriteElement.appendChild(listFavoriteImage);
       listFavoriteElement.appendChild(listFavoriteTitle);
-      listFavoriteElement.addEventListener('click', removeFavorite);
+      listFavoriteElement.appendChild(listFavoriteCross);
       listFavorite.appendChild(listFavoriteElement);
+      // Agregar listener a la cruz de eliminar
+      listFavoriteCross.addEventListener('click', removeFavorite);
+      // Condición para elegir imagen
       if (getLocalSerie[i].image === null) {
         listFavoriteTitle.innerHTML = getLocalSerie[i].name;
         listFavoriteImage.src =
@@ -90,6 +99,12 @@ function paintFavoriteList(getLocalSerie) {
         listFavoriteTitle.innerHTML = getLocalSerie[i].name;
       }
     }
+    // Creamos botón de eliminar todas fuera del  bucle. Si está dentro se crea un elemento por botón
+    const listDeleteAll = document.createElement('button');
+    const listDeleteAlText = document.createTextNode('ELIMINAR TODAS');
+    listDeleteAll.setAttribute('class', 'list-favorite-element-delete');
+    listDeleteAll.appendChild(listDeleteAlText);
+    listFavorite.appendChild(listDeleteAll);
   }
 }
 
@@ -101,13 +116,19 @@ function removeFavorite(ev) {
     id: target.id
   };
   let indexObjectRemove;
-  for (let i = 0; i < getLocalSerie.length; i++) {
+  for (let i = 0; i < localPaint.length; i++) {
     if (localPaint[i].id === removeObject.id) {
       indexObjectRemove = i;
     }
   }
+  for (let j = 0; j < localPaint.length; j++) {
+    if (localPaint[j].id === target.id) {
+      let listFavoriteElement = document.getElementById(localPaint[j].id);
+      listFavoriteElement.parentNode.removeChild(listFavoriteElement);
+    }
+  }
   localPaint.splice(indexObjectRemove, 1);
-  listFavorite.removeChild(target);
+  // listFavorite.removeChild(target);
   searchSerie(ev);
   localStorage.setItem('serie', JSON.stringify(localPaint));
 }
