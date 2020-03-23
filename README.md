@@ -17,8 +17,8 @@ Cada vez que arranques el proyecto en un nuevo repositorio, deberás realizar lo
 1. Visual Studio Code - Editor de código.
 2. Javascript - Lenguaje de programación.
 3. HTML5 y SASS - Para su maquetación.
-4. Git - Para el control de versiones
-5. Github - Como repositorio remoto
+4. Git - Para el control de versiones.
+5. Github - Como repositorio remoto.
 6. Github Pages - Para su publicación.
 
 ## Autores :fountain_pen:
@@ -31,7 +31,7 @@ Este proyecto está bajo la Licencia MIT - mira el archivo LICENSE.md para detal
 
 ---
 
-**:keyboard: con :heart: por Smgaragorri :blush:**
-Proud Adalaber de la promoción Idelisa :whale:
+`:keyboard: con :heart: por Smgaragorri :blush:`
+Ogullosa Adalaber de la promoción Idelisa :whale:
 
 ---
