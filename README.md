@@ -21,6 +21,13 @@ Cada vez que arranques el proyecto en un nuevo repositorio, deberás realizar lo
 5. Github - Como repositorio remoto.
 6. Github Pages - Para su publicación.
 
+## Otras fuentes :wrench:
+
+1. .[API abierto de TVMaze].(http://www.tvmaze.com/api#show-search) - Para obtener los listados de las series.
+2. .[Google Fonts].(https://fonts.google.com/) - Para obtener las fuentes de texto.
+3. .[Font Awesome].(https://fontawesome.com/) - Para obtener los iconos de la página (X en la sección de favoritos).
+4. .[Favicon ].(https://www.favicon.cc/?action=search&keywords=search)- Para descargar el favicon.
+
 ## Autores :fountain_pen:
 
 Sara Martín Garagorri - Desarollo y documentación - smgaragorri
