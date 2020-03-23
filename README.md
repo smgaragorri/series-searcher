@@ -31,7 +31,7 @@ Este proyecto está bajo la Licencia MIT - mira el archivo LICENSE.md para detal
 
 ---
 
-`:keyboard: con :heart: por Smgaragorri :blush:`
+:keyboard: con :heart: por Smgaragorri :blush:
 Ogullosa Adalaber de la promoción Idelisa :whale:
 
 ---
