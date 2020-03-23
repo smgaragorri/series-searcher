@@ -4,9 +4,9 @@ Aplicación web para poder buscar series y gestionarlas añadiéndolas a tus fav
 
 ## Guía de inicio rápido
 
-Necesitarás instalar [Node.js](https://nodejs.org/), [Gulp](https://gulpjs.com) y el Starter Kit de Adalab (https://github.com/Adalab/Adalab-web-starter-kit) para trabajar con este proyecto:
+Necesitarás instalar [Node.js](https://nodejs.org/), [Gulp](https://gulpjs.com) y el [Starter Kit de Adalab] (https://github.com/Adalab/Adalab-web-starter-kit) para trabajar con este proyecto:
 
-1. Descarga o clona el repositorio Starter Kit de Adalab
+1. Descarga o clona el repositorio `Starter Kit de Adalab`
 2. Instala las dependencias locales con `npm install`
 3. Arranca el kit con `gulp`
 
