@@ -20,6 +20,7 @@ body {
 
 .search {
   &-form {
+    width: 400px;
     margin: 0 0px 0 25px;
     font-family: $font-mainText;
   }
@@ -41,7 +42,6 @@ body {
 }
 
 .list-favorite {
-  width: 220px;
   margin: 0 25px 0 25px;
   &-title {
     letter-spacing: 2px;
@@ -94,7 +94,6 @@ body {
   display: flex;
   flex-direction: row;
   margin: 30px;
-  width: 1400px;
   &-list {
     display: flex;
     flex-direction: row;
@@ -137,4 +136,59 @@ body {
   color: $font-black;
   text-align: center;
   margin: 5px;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .search {
+    &-form {
+      width: 200px;
+    }
+    &-input-title {
+      font-size: 14px;
+      margin: 0 20px 20px 0;
+    }
+    &-btn {
+      font-size: 14px;
+      width: 60px;
+      margin-bottom: 20px;
+    }
+  }
+  .list-search-element {
+    padding: 10px 10px 0 10px;
+    &-title {
+      font-size: 20px;
+    }
+  }
+  .results {
+    width: 70vw;
+    margin: 5px;
+  }
+
+  .favorite {
+    padding: 10px 10px 0 10px;
+    &-title {
+      font-size: 20px;
+    }
+  }
+  .list-favorite {
+    &-element {
+      width: 100px;
+      width: 20vw;
+      &-title {
+        width: 150px;
+        font-size: 14px;
+        padding: 5px;
+      }
+      &-image {
+        width: 75px;
+        height: 103px;
+        border: 1px solid $font-yellow;
+      }
+      &-delete {
+        margin-top: 15px;
+        font-size: 16px;
+        width: 150px;
+      }
+    }
+  }
 }
