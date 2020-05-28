@@ -3,6 +3,7 @@
 const searchBtn = document.querySelector('.js-btn-search');
 const listSearch = document.querySelector('.js-search-results');
 let listFavorite = document.querySelector('.js-favorites-list');
+const logBtn = document.querySelector('.js-btn-log');
 
 // Traer datos de local storage
 let getLocalSerie = JSON.parse(localStorage.getItem('serie'));
@@ -19,12 +20,11 @@ function searchSerie(ev) {
   const searchTitle = inputSearchTitle.value;
   if (searchTitle !== '') {
     fetch(`http://api.tvmaze.com/search/shows?q=${searchTitle}`)
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(data) {
+      .then(function (data) {
         let listApiArray = data;
-        console.log('lista 2 ' + listApiArray);
         paintSearchResult(listApiArray);
       });
   }
@@ -38,7 +38,6 @@ function paintSearchResult(listApiArray) {
     const listSearchElement = document.createElement('li');
     const listSearchImage = document.createElement('img');
     const listSearchTitle = document.createElement('p');
-    // Darle a cada elemento sus atributos
     listSearchElement.setAttribute('class', 'list-search-element');
     listSearchElement.setAttribute('id', `${listApiArray[i].show.id}`);
     listSearchElement.setAttribute('value', `${listApiArray[i].show.name}`);
@@ -52,6 +51,7 @@ function paintSearchResult(listApiArray) {
         listSearchElement.setAttribute('class', 'favorite');
       }
     }
+
     // Meter unos elementos dentro de otros
     listSearchElement.appendChild(listSearchImage);
     listSearchElement.appendChild(listSearchTitle);
@@ -139,7 +139,7 @@ function removeFavoriteList(target) {
   const removeObject = {
     name: target.textContent,
     id: target.id,
-    src: target.children[0].src
+    src: target.children[0].src,
   };
   let indexObjectRemove;
   // Obtenemos su índice dentro del Array del local storage comparando los ID
@@ -162,9 +162,8 @@ function addFavoriteList(target) {
   const saveObject = {
     name: target.textContent,
     id: target.id,
-    src: target.children[0].src
+    src: target.children[0].src,
   };
-  console.log(getLocalSerie);
   // Se añade objeto a array
   getLocalSerie.push(saveObject);
   // Enviamos nueva lista con ese nuevo elemento al Local Storage
@@ -179,7 +178,7 @@ function removeFavorite(ev) {
   // Creamos el objeto a eliminar
   let removeObject = {
     name: target.name,
-    id: target.id
+    id: target.id,
   };
   // Obtenemos su índice dentro del Array del local storage comparando los ID, para posteriormente eliminar del array getLocalSerie
   let indexObjectRemove;
@@ -216,4 +215,9 @@ function deleteAllFavorites(ev) {
   localStorage.setItem('serie', JSON.stringify(getLocalSerie));
 }
 
+function favoritesNumber(ev) {
+  ev.preventDefault(ev);
+}
+
 searchBtn.addEventListener('click', searchSerie);
+logBtn.addEventListener('click', favoritesNumber);

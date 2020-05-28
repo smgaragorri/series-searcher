@@ -1,20 +1,28 @@
 body {
-  height: 100vh;
   background: $background-body;
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
 }
 
 .main {
   &-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
   }
   &-title-text {
-    color: $font-yellow;
+    color: $yellow;
     font-family: $font-main;
-    margin-top: 10px;
+    margin: 30px 0 40px 0;
     text-shadow: 0 0 30px rgba(245, 214, 76, 0.746);
     font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
   }
 }
 
@@ -26,14 +34,18 @@ body {
   &-input-title {
     font-size: 20px;
     margin: 0 20px 20px 0;
+    text-transform: uppercase;
+    padding: 5px 5px 5px 10px;
   }
   &-btn {
-    font-size: 20px;
+    font-size: 24px;
     font-family: $font-mainText;
-    width: 100px;
+    width: 150px;
     border-radius: 50px;
-    background: $font-yellow;
+    background: $yellow;
     padding: 5px;
+    margin-bottom: 30px;
+    font-weight: bold;
     &:hover {
       box-shadow: 0 0 30px rgba(245, 214, 76, 0.746);
     }
@@ -44,9 +56,10 @@ body {
   width: 220px;
   margin: 0 25px 0 25px;
   &-title {
+    font-size: 24px;
     letter-spacing: 2px;
     margin: 0 25px 0 25px;
-    color: $font-yellow;
+    color: $yellow;
     font-family: $font-mainText;
   }
   &-element {
@@ -54,11 +67,7 @@ body {
     display: flex;
     flex-direction: row;
     margin-top: 15px;
-    background: linear-gradient(
-      to right,
-      $font-yellow,
-      rgba(249, 192, 4, 0.664)
-    );
+    background: linear-gradient(to right, $yellow, rgba(249, 192, 4, 0.664));
     border-radius: 10px;
     &-title {
       flex-wrap: wrap;
@@ -71,7 +80,7 @@ body {
     &-image {
       width: 106px;
       height: 146px;
-      border: 2px solid $font-yellow;
+      border: 2px solid $yellow;
       border-radius: 10px;
     }
     &-delete {
@@ -93,9 +102,11 @@ body {
 .results {
   display: flex;
   flex-direction: row;
-  margin: 30px;
-  width: 1400px;
+  margin: 0 30px 30px 30px;
   &-list {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -107,15 +118,17 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 20px 20px 0 20px;
-  background: $font-grey;
+  background: $grey;
   margin: 10px 10px 30px 10px;
   border-radius: 10px;
-  color: $font-yellow;
+  color: $yellow;
   &-title {
-    margin: 10px 10px 30px 10px;
+    margin: 10px 10px 15px 10px;
     font-size: 25px;
     width: 210px;
     font-family: $font-mainText;
+    font-weight: bold;
+    letter-spacing: 2px;
   }
 }
 
@@ -126,10 +139,10 @@ body {
   padding: 20px 20px 0 20px;
   margin: 10px 10px 30px 10px;
   border-radius: 10px;
-  background: $font-yellow;
+  background: $yellow;
   font-family: $font-mainText;
   font-weight: 900;
-  color: $font-grey;
+  color: $grey;
 }
 
 .fas {
@@ -137,4 +150,130 @@ body {
   color: $font-black;
   text-align: center;
   margin: 5px;
+}
+
+@media all and (min-width: 768px) and (max-width: 1200px) {
+  .page {
+    padding: 40px;
+  }
+  .results {
+    margin: 0 15px 15px 15px;
+  }
+  .search {
+    &-form {
+      margin: 0 0px 0 25px;
+      font-family: $font-mainText;
+    }
+    &-input-title {
+      font-size: 18px;
+    }
+  }
+
+  .list-favorite {
+    width: 150px;
+    margin: 0 15px 0 15px;
+    &-title {
+      font-size: 20px;
+    }
+    &-element {
+      width: 180px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 25px 15px 15px 15px;
+      margin-top: 15px;
+      &-title {
+        font-size: 20px;
+      }
+      &-delete {
+        margin-top: 30px;
+        width: 150px;
+      }
+    }
+  }
+  .list-search-element {
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    &-title {
+      width: 150px;
+      font-size: 18px;
+    }
+    &-image {
+      width: 150px;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .page {
+    padding: 30px;
+  }
+  .search {
+    &-form {
+      margin: 0 0px 0 0px;
+      font-family: $font-mainText;
+      &-container {
+        width: 150px;
+      }
+    }
+    &-input-title {
+      font-size: 14px;
+      width: 120px;
+      margin: 0 10px 20px 0;
+    }
+    &-btn {
+      width: 120px;
+    }
+  }
+
+  .main {
+    &-container {
+      display: flex;
+    }
+  }
+
+  .list-favorite {
+    width: 300px;
+    margin: 0;
+    &-div {
+      margin: 0;
+    }
+    &-title {
+      margin: 0;
+      font-size: 20px;
+    }
+    &-element {
+      width: 90px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px 5px 5px 5px;
+      margin-top: 15px;
+      &-title {
+        width: 90px;
+        font-size: 14px;
+      }
+      &-delete {
+        font-size: 16px;
+        margin-top: 30px;
+        width: 100px;
+        height: 70px;
+      }
+      &-image {
+        width: 60px;
+        height: 90px;
+      }
+    }
+  }
+  .list-search-element {
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    &-title {
+      width: 150px;
+      font-size: 18px;
+    }
+    &-image {
+      width: 150px;
+    }
+  }
 }
