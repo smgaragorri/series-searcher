@@ -3,7 +3,6 @@
 const searchBtn = document.querySelector('.js-btn-search');
 const listSearch = document.querySelector('.js-search-results');
 let listFavorite = document.querySelector('.js-favorites-list');
-const logBtn = document.querySelector('.js-btn-log');
 
 // Traer datos de local storage
 let getLocalSerie = JSON.parse(localStorage.getItem('serie'));
@@ -19,7 +18,7 @@ function searchSerie(ev) {
   const inputSearchTitle = document.querySelector('.js-search-title');
   const searchTitle = inputSearchTitle.value;
   if (searchTitle !== '') {
-    fetch(`http://api.tvmaze.com/search/shows?q=${searchTitle}`)
+    fetch(`https://api.tvmaze.com/search/shows?q=${searchTitle}`)
       .then(function (response) {
         return response.json();
       })
@@ -215,9 +214,4 @@ function deleteAllFavorites(ev) {
   localStorage.setItem('serie', JSON.stringify(getLocalSerie));
 }
 
-function favoritesNumber(ev) {
-  ev.preventDefault(ev);
-}
-
 searchBtn.addEventListener('click', searchSerie);
-logBtn.addEventListener('click', favoritesNumber);
